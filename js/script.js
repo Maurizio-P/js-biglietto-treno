@@ -26,13 +26,15 @@ if (isNaN(eta)) {
     alert("Per favore inserisci un numero valido per la tua età.")
     location.reload()
 } else if (eta <= 17) {
-    bigliettoUnder18 = costoBiglietto - (costoBiglietto / 100 * 20)
+    bigliettoUnder18 = costoBiglietto - (costoBiglietto / 100 * 20).toFixed(2)
+    prompt("Costo del biglietto under18: " + bigliettoUnder18 + "€")
 } else if (eta >= 65) {
-    bigliettoOver65 = costoBiglietto - (costoBiglietto / 100 * 40)
+    bigliettoOver65 = (costoBiglietto - (costoBiglietto / 100 * 40)).toFixed(2)
+    prompt("Costo del biglietto over65: " + bigliettoOver65 + "€")
+} else {
+    prompt("Costo del biglietto intero: " + costoBiglietto + "€")
 }
 
 console.log(`Prezzo bigglieto under 18: ${bigliettoUnder18}.
 Prezzo biglietto intero: ${costoBiglietto}.
 Prezzo biglietto over 65: ${bigliettoOver65}.`)
-
-
